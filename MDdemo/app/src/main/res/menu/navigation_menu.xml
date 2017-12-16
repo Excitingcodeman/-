@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_main"
+            android:icon="@drawable/shuye"
+            android:title="主页" />
+        <item
+            android:id="@+id/navigation_item_t1"
+            android:icon="@drawable/shuye"
+            android:title="MD输入框" />
+        <item
+            android:id="@+id/navigation_item_snack_bar"
+            android:icon="@drawable/shuye"
+            android:title="SnackBar" />
+    </group>
+</menu>
