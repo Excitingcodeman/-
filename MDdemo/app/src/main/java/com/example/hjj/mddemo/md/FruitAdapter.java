@@ -40,7 +40,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 Fruit fruit = mFruitList.get(position);
-                Intent intent = new Intent(context, Main2Activity.class);
+                Intent intent = new Intent(context, FruitActivity.class);
                 intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());
                 intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());
                 context.startActivity(intent);
