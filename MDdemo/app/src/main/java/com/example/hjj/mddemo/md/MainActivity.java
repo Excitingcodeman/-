@@ -17,13 +17,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hjj.mddemo.R;
+import com.example.hjj.mddemo.gaode.AmapActivity;
 import com.example.hjj.mddemo.jdnews.activity.NewsActivity;
 import com.example.hjj.mddemo.mvvm.activity.Main2Activity;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,10 +83,16 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawers();
                         break;
                     case R.id.navigation_item_t1:
+                        drawerLayout.closeDrawers();
                         startActivity(new Intent(MainActivity.this, Main2Activity.class));
                         break;
                     case R.id.navigation_item_snack_bar:
+                        drawerLayout.closeDrawers();
                         startActivity(new Intent(MainActivity.this, NewsActivity.class));
+                        break;
+                    case R.id.navigation_item_map:
+                        drawerLayout.closeDrawers();
+                        startActivity(new Intent(MainActivity.this, AmapActivity.class));
                         break;
                 }
 

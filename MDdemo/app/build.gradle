@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'MD_KEY'
+            keyPassword '123456'
+            storeFile file('F:/github/android_mvvm/MDdemo/md.jks')
+            storePassword '123456'
+        }
+    }
     dataBinding {
         enabled = true
     }
@@ -12,11 +20,19 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）  高德
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -33,7 +49,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.+'
     implementation 'com.jakewharton:butterknife:8.7.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
-//    圆形图片
+    //    圆形图片
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'javax.annotation:javax.annotation-api:1.2'
     implementation 'org.projectlombok:lombok:1.16.6'
@@ -47,4 +63,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     implementation 'org.greenrobot:eventbus:3.1.1'
+    //高德地图
+    implementation 'com.amap.api:3dmap:5.0.0'
+    implementation 'com.amap.api:location:3.3.0'
+    implementation 'com.amap.api:search:5.0.0'
+//    微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 }

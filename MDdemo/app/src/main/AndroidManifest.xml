@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hjj.mddemo">
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //地图包、搜索包需要的基础权限
+    <!-- 申请必要的权限-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:name=".jdnews.app.MyApplication"
@@ -16,6 +23,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="5bb00dfcd088601f1b7aa04271d0635f" />
+
         <activity
             android:name=".md.MainActivity"
             android:theme="@style/FruitTheme">
@@ -30,7 +41,10 @@
             android:theme="@style/FruitTheme" />
         <activity android:name=".mvvm.activity.Main2Activity" />
         <activity android:name=".jdnews.activity.NewsActivity" />
-        <activity android:name=".jdnews.activity.NewsDetailActivity"></activity>
+        <activity android:name=".jdnews.activity.NewsDetailActivity" />
+        <activity android:name=".gaode.AmapActivity" />
+
+        <service android:name="com.amap.api.location.APSService" />
     </application>
 
 </manifest>

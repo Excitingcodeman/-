@@ -13,5 +13,9 @@
             android:id="@+id/navigation_item_snack_bar"
             android:icon="@drawable/shuye"
             android:title="SnackBar" />
+        <item
+            android:id="@+id/navigation_item_map"
+            android:icon="@drawable/shuye"
+            android:title="Map" />
     </group>
 </menu>
