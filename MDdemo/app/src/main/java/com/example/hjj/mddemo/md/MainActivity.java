@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.hjj.mddemo.R;
 import com.example.hjj.mddemo.gaode.AmapActivity;
 import com.example.hjj.mddemo.jdnews.activity.NewsActivity;
+import com.example.hjj.mddemo.login.LoginActivity;
 import com.example.hjj.mddemo.mvvm.activity.Main2Activity;
 
 
@@ -93,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_item_map:
                         drawerLayout.closeDrawers();
                         startActivity(new Intent(MainActivity.this, AmapActivity.class));
+                        break;
+                    case R.id.navigation_item_qq://qq的第三方登录
+                        drawerLayout.closeDrawers();
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         break;
                 }
 

@@ -17,5 +17,9 @@
             android:id="@+id/navigation_item_map"
             android:icon="@drawable/shuye"
             android:title="Map" />
+        <item
+            android:id="@+id/navigation_item_qq"
+            android:icon="@drawable/shuye"
+            android:title="QQ" />
     </group>
 </menu>
